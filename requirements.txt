@@ -2,3 +2,4 @@ pytest
 python-dotenv
 click
 sphinx
+black

@@ -24,6 +24,11 @@ run:
 pytest:
 	source venv/bin/activate ; PYTHONPATH='./src' pytest -vvv -s
 
+.PHONY: black
+## Run black code formatter
+black:
+	source venv/bin/activate ; black .
+
 .PHONY: sync_data_to_s3
 ## Upload Data to S3
 sync_data_to_s3:
