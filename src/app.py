@@ -3,7 +3,7 @@ from library.log import get_logger
 logger = get_logger(__name__)
 
 
-def main():
+def main() -> None:
     logger.info("Hello python project template!")
 
 
