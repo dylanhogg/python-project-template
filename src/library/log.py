@@ -1,5 +1,6 @@
-import logging
 import datetime
+import logging
+import pathlib
 
 
 def get_logger(log_name="app", log_level="INFO", log_format=None, file_name=None):
@@ -13,6 +14,9 @@ def get_logger(log_name="app", log_level="INFO", log_format=None, file_name=None
 
     if log_format is None:
         log_format = "%(asctime)s\t[%(levelname)s] %(name)s:\t%(message)s"
+
+    filepath = pathlib.Path(full_file_name)
+    filepath.parent.mkdir(parents=True, exist_ok=True)
 
     fh = logging.FileHandler(full_file_name)
     fh.setLevel(log_level)
