@@ -3,4 +3,4 @@ import app
 
 
 def test1() -> None:
-    app.main()
+    app.main("req_arg")
