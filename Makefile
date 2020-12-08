@@ -1,52 +1,46 @@
 .EXPORT_ALL_VARIABLES:
+PROJECT=todo
 BUCKET=todo
-PROFILE=todo
+PROFILE=default
+DATA_FOLDER=data
 
-.PHONY: venv
 ## Create virtual environment
 venv:
 	python3 -m venv venv
-	source venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements.txt
+	source venv/bin/activate ; pip install --upgrade pip ; python3 -m pip install -r requirements-dev.txt
 	source venv/bin/activate ; pip freeze > requirements_freeze.txt
 
-.PHONY: clean
 ## Clean virtual environment
 clean:
 	rm -rf venv
 
-.PHONY: run
 ## Run the app
 run:
-	source venv/bin/activate ; PYTHONPATH='./src' python -m app
+	source venv/bin/activate ; PYTHONPATH='./src' python -m app req1 --optional-arg opt1
 
-.PHONY: pytest
+## Help running the app
+run_help:
+	source venv/bin/activate ; PYTHONPATH='./src' python -m app --help
+
+## Run jupyter in main venv
+jupyter:
+	source venv/bin/activate; PYTHONPATH='./src' jupyter lab
+
 ## Run unit tests
 pytest:
 	source venv/bin/activate ; PYTHONPATH='./src' pytest -vvv -s
 
-.PHONY: black
 ## Run black code formatter
 black:
 	source venv/bin/activate ; black .
 
-.PHONY: sync_data_to_s3
 ## Upload Data to S3
 sync_data_to_s3:
-    ifeq (default,$(PROFILE))
-        aws s3 sync data/ s3://$(BUCKET)/data/
-    else
-        aws s3 sync data/ s3://$(BUCKET)/data/ --profile $(PROFILE)
-    endif
+	aws s3 sync $(DATA_FOLDER)/ s3://$(BUCKET)/$(PROJECT)/ --profile $(PROFILE) --exclude ".*"
 
-.PHONY: sync_data_from_s3
 ## Download Data from S3
 sync_data_from_s3:
-    ifeq (default,$(PROFILE))
-        aws s3 sync s3://$(BUCKET)/data/ data/
-    else
-        aws s3 sync s3://$(BUCKET)/data/ data/ --profile $(PROFILE)
-    endif
-
+	aws s3 sync s3://$(BUCKET)/$(PROJECT)/ $(DATA_FOLDER)/ --profile $(PROFILE) --exclude ".*"
 
 
 #################################################################################
@@ -72,8 +66,6 @@ sync_data_from_s3:
 # semicolon; see <http://stackoverflow.com/a/11799865/1968>
 .PHONY: help
 help:
-	@echo "$$(tput bold)Available rules:$$(tput sgr0)"
-	@echo
 	@sed -n -e "/^## / { \
 		h; \
 		s/.*//; \

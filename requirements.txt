@@ -1,5 +1,5 @@
-pytest
 python-dotenv
 click
 sphinx
-black
+typer
+tqdm
