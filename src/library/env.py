@@ -1,18 +1,15 @@
 import os
 from dotenv import load_dotenv
+from loguru import logger
 
 load_dotenv()
 
 
-def get_env(name, default=None) -> str:
+def get(name, default=None) -> str:
+    logger.trace(f"get_env called with name '{name}' and default '{default}'")
     if os.getenv(name) is None and default is None:
         raise Exception(f"{name} environment variable is not set.")
     elif os.getenv(name) is None:
         return default
     else:
         return os.environ[name]
-
-
-# def get_env_bool(name, default="False"):
-#     val = get_env(name, str(default))
-#     return bool(distutils.util.strtobool(val))

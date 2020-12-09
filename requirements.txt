@@ -3,3 +3,4 @@ click
 sphinx
 typer
 tqdm
+loguru
