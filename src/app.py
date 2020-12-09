@@ -1,13 +1,15 @@
 import typer
 from tqdm import tqdm
 from time import sleep
-from library.log import get_logger
+from library import log
+from library import env
 
-logger = get_logger(__name__)
+logger = log.get_logger(__name__)
 
 
 def main(required_arg: str, optional_arg: str = None) -> None:
-    logger.info(f"Hello! required_arg = {required_arg}, optional_arg = {optional_arg}")
+    python_path = env.get_env("PYTHONPATH", "not set")
+    logger.info(f"Hello!\nrequired_arg = {required_arg}, optional_arg = {optional_arg}\npython_path = {python_path}")
 
     for i in tqdm(range(5)):
         sleep(0.1)
