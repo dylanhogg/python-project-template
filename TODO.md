@@ -1,15 +1,14 @@
 # TODO
 
-1) TODO: Improve logging -> use https://github.com/Delgan/loguru OR https://github.com/hynek/structlog OR https://github.com/metachris/logzero
-1) TODO: TEST: Data folder AWS sync
-1) TODO: flake8/lint
-1) X TODO: Commandline parsing with typer
-1) X TODO: Progress bar example with tqdm
+1) TODO: Sample jupyter notebook with imports from src
+1) TODO: GH action for:
+    1) Running flake8 and pytest: https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml
+    1) AWS ECS deployment: https://github.com/actions/starter-workflows/blob/main/ci/aws.yml
+1) TODO: Consider a base streamlit app example
 1) TODO: Doc generator with sphinx - https://www.sphinx-doc.org/en/master/ (or https://github.com/squidfunk/mkdocs-material ?)
 1) TODO: Binary package for app distribution with pyinstaller - http://www.pyinstaller.org/
 1) TODO: Docker package for build and run
 1) TODO: Terraform deploy Docker image to ECS/K8S/GCP
 1) TODO: Once stable, package this template with cookiecutter - https://cookiecutter.readthedocs.io/
 1) TODO: Investigate using https://github.com/google/gin-config for ML params
-1) TODO: Add static Typing checking
-1) TODO: Travid CI / Github actions (https://developer.okta.com/blog/2020/05/18/travis-ci-to-github-actions)
+1) TODO: Add static Typing checking (mypy, pyre-check or pytype)
