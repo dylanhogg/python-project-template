@@ -32,7 +32,11 @@ pytest:
 
 ## Run black code formatter
 black:
-	source venv/bin/activate ; black .
+	source venv/bin/activate ; black  --line-length 120 .
+
+## Run flake8 linting
+flake8:
+	source venv/bin/activate ; flake8 . --max-line-length=120
 
 ## Upload Data to S3
 sync_data_to_s3:
