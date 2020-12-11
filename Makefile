@@ -27,7 +27,7 @@ jupyter:
 	source venv/bin/activate; PYTHONPATH='./src' jupyter lab
 
 ## Run unit tests
-pytest:
+test:
 	source venv/bin/activate ; PYTHONPATH='./src' pytest -vvv -s
 
 ## Run black code formatter
