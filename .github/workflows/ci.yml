@@ -39,5 +39,5 @@ jobs:
         run: |
           make flake8
       - name: Test with pytest via Makefile
-          run: |
-            make pytest
+        run: |
+          make pytest
