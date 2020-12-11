@@ -18,11 +18,11 @@ clean:
 run:
 	source venv/bin/activate ; PYTHONPATH='./src' python -m app req1 --optional-arg opt1
 
-## Help running the app
+## App help message
 run_help:
 	source venv/bin/activate ; PYTHONPATH='./src' python -m app --help
 
-## Run jupyter in main venv
+## Run jupyter lab
 jupyter:
 	source venv/bin/activate; PYTHONPATH='./src' jupyter lab
 
@@ -34,9 +34,10 @@ pytest:
 black:
 	source venv/bin/activate ; black  --line-length 120 .
 
-## Run flake8 linting
+## Run flake8 linter
 flake8:
-	source venv/bin/activate ; flake8 . --max-line-length=120
+	source venv/bin/activate ; flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    source venv/bin/activate ; flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
 ## Upload Data to S3
 sync_data_to_s3:
