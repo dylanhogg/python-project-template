@@ -35,9 +35,3 @@ jobs:
       - name: Test with pytest
         run: |
           PYTHONPATH='./src' pytest
-      - name: Lint with flake8 via Makefile
-        run: |
-          make flake8
-      - name: Test with pytest via Makefile
-        run: |
-          make pytest
