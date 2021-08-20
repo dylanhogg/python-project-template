@@ -5,11 +5,9 @@
 
 A quick start Python project template with some common functionality and libraries.
 
-_Currently a WIP_
-
 Type `make` for a list of commands.
 
-Utilises these application libraries:  
+### Utilises these application libraries  
 
 1) https://github.com/theskumar/python-dotenv  
 1) https://github.com/pallets/click  
@@ -19,7 +17,7 @@ Utilises these application libraries:
 1) https://github.com/Delgan/loguru    
 
 
-Utilises these development libraries:  
+### Utilises these development libraries
 
 1) https://github.com/pytest-dev/pytest    
 1) https://github.com/psf/black  
@@ -27,3 +25,11 @@ Utilises these development libraries:
 
 
 Also has [Jupyter Lab](https://github.com/jupyterlab/jupyterlab) integration.
+
+
+### Other templates for inspiration/alternatives
+
+1) https://github.com/TezRomacH/python-package-template
+1) https://github.com/drivendata/cookiecutter-data-science
+1) https://github.com/crmne/cookiecutter-modern-datascience
+
