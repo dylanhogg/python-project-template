@@ -15,8 +15,14 @@ clean:
 	rm -rf venv
 
 ## Run the app
-run:
-	source venv/bin/activate ; PYTHONPATH='./src' python -m app req1 --optional-arg opt1
+chat:
+	source venv/bin/activate ; PYTHONPATH='./src' python -m app chat
+
+chat-product:
+	source venv/bin/activate ; PYTHONPATH='./src' python -m app chat --product='$(product)'
+
+completion:
+	source venv/bin/activate ; PYTHONPATH='./src' python -m app completion
 
 ## App help message
 run_help:
