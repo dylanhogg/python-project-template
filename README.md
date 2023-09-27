@@ -45,9 +45,11 @@ Type `make` for all commands.
 
 ## Other Python templates for inspiration/alternatives
 
-1) https://github.com/TezRomacH/python-package-template
-2) https://github.com/drivendata/cookiecutter-data-science
-3) https://github.com/crmne/cookiecutter-modern-datascience
+1) https://github.com/tedivm/robs_awesome_python_template
+2) https://github.com/TezRomacH/python-package-template
+3) https://github.com/drivendata/cookiecutter-data-science
+4) https://github.com/crmne/cookiecutter-modern-datascience
+5) https://github.com/xinntao/ProjectTemplate-Python
 
 
 ## Improvements
